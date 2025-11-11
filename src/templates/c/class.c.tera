@@ -1,0 +1,31 @@
+// Auto-generated C struct for {{ class.name }}
+#include <stdio.h>
+#include <string.h>
+
+typedef struct {
+{% for a in class.attributes %}
+    {% if a.type == "int" %}
+    int {{ a.name }};
+    {% else %}
+    char* {{ a.name }};
+    {% endif %}
+{% endfor %}
+} {{ class.name }};
+
+void init_{{ class.name | lower }}({{ class.name }}* self{% if class.attributes | length > 0 %}{% for a in class.attributes %}, {% if a.type == "int" %}int{% else %}char*{% endif %} {{ a.name }}{% endfor %}{% endif %}) {
+{% for a in class.attributes %}
+    self->{{ a.name }} = {{ a.name }};
+{% endfor %}
+}
+
+{% if class.methods %}
+{% for m in class.methods %}
+void {{ class.name | lower }}_{{ m.name }}({{ class.name }}* self) {
+{% if m.body | trim != "" %}
+    {{ m.body | replace(from="\n", to="\n    ") }}
+{% else %}
+    // TODO: implement method
+{% endif %}
+}
+{% endfor %}
+{% endif %}

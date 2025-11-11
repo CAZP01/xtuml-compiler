@@ -172,9 +172,9 @@ public class Order {
 
 | Tahap | Deskripsi                                 | Status                 |
 |-------|-------------------------------------------|------------------------|
-| 1     | Struktur dasar proyek & parser JSON       | Sedang dikerjakan      |
-| 2     | Analisis semantik model                   | Sedang dikerjakan      |
-| 3     | Generator kode Python / Java / Javascript | Dalam pengembangan     |
+| 1     | Struktur dasar proyek & parser JSON       | Selesai                |
+| 2     | Analisis semantik model                   | Selesai                |
+| 3     | Generator kode Python / Java / Javascript | Selesai                |
 | 4     | Validasi event & state machine            | Rencana berikutnya     |
 | 5     | Integrasi WebAssembly (xtUML web IDE)     | Rencana jangka panjang |
 
